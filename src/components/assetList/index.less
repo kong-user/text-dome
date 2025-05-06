@@ -1,0 +1,116 @@
+.app-asset {
+    .asset-info {
+        .title {
+            font-weight: 600;
+            display: flex;
+            justify-content: center;
+
+            .logo {
+                width: 1.5rem;
+                height: 1.5rem;
+                margin-right: 0.5rem;
+                background-color: transparent
+            }
+
+            .line {
+                border: 1px solid;
+                margin: 0 0.5rem;
+            }
+
+            .type {
+                font-size: 14px;
+                color: #B6B8BA;
+                display: flex;
+                align-items: end;
+            }
+        }
+
+        .usdt {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 600;
+            color: #757575;
+            margin-top: 0.25rem;
+
+            .count {
+                font-size: 20px;
+                margin: 0 0.25rem;
+                color: rgba(255, 255, 255, 0.87);
+            }
+        }
+
+        .feature {
+            padding: 0 7rem;
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+
+            .feature-box {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .ant-btn-variant-solid {
+                    background: #4998F3 !important;
+                }
+
+                .btn {
+                    width: 3rem;
+                    height: 3rem;
+
+                    .icon {
+                        font-size: 1.5rem;
+                    }
+                }
+
+                .text {
+                    margin-top: 0.25rem;
+                    font-size: 0.75rem;
+                }
+            }
+
+        }
+    }
+
+    .asset-list {
+        padding: 1rem;
+        margin-top: auto;
+        border-top-left-radius: 0.8rem;
+        border-top-right-radius: 0.8rem;
+        background-color: #F4FAFE;
+        color: black;
+
+        .asset-item {
+            display: flex;
+            justify-content: space-between;
+            background-color: #FFFFFF;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 1rem;
+            border-radius: 0.5rem;
+            .icon {
+                width: 2rem;
+                height: 2rem;
+                margin-right: 1rem;
+            }
+
+            .left {
+                display: flex;
+                align-items: center;
+                padding: 1rem;
+            }
+
+            .right {
+                padding: 0.5rem;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+
+                .asset-dor {
+                    font-size: 0.75rem;
+                    color:#939BA6
+                }
+            }
+        }
+    }
+}
