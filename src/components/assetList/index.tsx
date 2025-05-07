@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Button } from 'antd'
 import { SwapRightOutlined, SwapLeftOutlined } from '@ant-design/icons'
 import { getCurren, getliveRates, getWallet } from "../../api";
+import { AssetVirtualList } from "./virtual";
 import logo from '@/assets/logo.png';
 import './index.less'
 import { getTotalBalanceInUSD } from "../../until";
@@ -21,11 +22,11 @@ const AssetList = () => {
         worker.onmessage = (e) => {
             const data = e.data;
             //计算usd总量
-            const total= getTotalBalanceInUSD(data)
+            const total = getTotalBalanceInUSD(data)
             setUsdtotal(total)
             setAssetList(data)
         }
-        
+
     }
     useEffect(() => {
         let stopped = false
@@ -67,8 +68,9 @@ const AssetList = () => {
                 </div>
             </div>
             <div className="asset-list">
+                {/* 列表数据过多时，可以使用虚拟列表优化dom节点加载速度 */}
                 {
-                    assetList.map(item => {
+                    assetList?.length < 1 ? assetList.map(item => {
                         return <div className="asset-item">
                             <div className='left'>
                                 <img src={item?.colorful_image_url} className="icon" />
@@ -85,8 +87,9 @@ const AssetList = () => {
                                 </div>
                             </div>
                         </div>
-                    })
+                    }) : <AssetVirtualList assetList={assetList} />
                 }
+
             </div>
         </div>
     )
